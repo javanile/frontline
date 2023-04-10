@@ -18,7 +18,7 @@ deploy:
 
 restart:
 	@docker compose pull
-	@docker compose up -d --build --force-recreate --remove-orphans && sleep 15
+	@docker compose up -d --build --force-recreate --remove-orphans
 	@docker compose logs proxy
 
 expose-docker:
