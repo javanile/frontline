@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-#echo "$1" | sudo -S rm -fr /opt/mysql.javanile.org
-
+## Install the repo
 if [ ! -d /opt/frontline ]; then
-  echo "$1" | sudo -S apt-get install -y make
-  echo "$1" | sudo -S make clone
-  echo "$1" | sudo -S make expose-docker
+  echo "$1" | sudo -S bash -c '
+    apt-get install -y git make;
+    git config --global --add safe.directory /opt/frontline;
+    git clone https://github.com/javanile/frontline /opt/frontline;
+  '
 fi
 
 cd /opt/frontline
