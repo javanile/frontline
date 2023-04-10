@@ -14,7 +14,7 @@ clone: dependencies
 	@git clone https://github.com/javanile/frontline /opt/frontline
 
 ssh:
-	echo sshpass -p $${SSH_PASSWORD} ssh $${SSH_USER}@${SSH_HOST} -p $${SSH_PORT:-22} bash -s -- $${SSH_PASSWORD}
+	@sshpass -p $${SSH_PASSWORD} ssh $${SSH_USER}@${SSH_HOST} -p $${SSH_PORT:-22} bash -s -- $${SSH_PASSWORD}
 
 deploy:
 	@date > contrib/RELEASE
