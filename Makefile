@@ -18,8 +18,8 @@ deploy:
 
 restart:
 	@docker compose pull
-	@docker compose up -d --force-recreate && sleep 15
-	@docker compose logs mysql
+	@docker compose up -d --force-recreate --remove-orphans && sleep 15
+	@docker compose logs proxy
 
 expose-docker:
 	@echo '{"hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"]}' > /etc/docker/daemon.json
