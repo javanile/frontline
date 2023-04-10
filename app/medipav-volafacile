@@ -11,7 +11,11 @@ volafacile.javanile.org {
 		}
    	}
    	handle /cool/* {
-		reverse_proxy http://192.168.144.23:9980 {
+   		@websockets {
+    		header Connection *Upgrade*
+    		header Upgrade websocket
+    	}
+		reverse_proxy @websockets http://192.168.144.23:9980 {
 			header_up Host volafacile.javanile.org
 			header_up X-Real-IP {remote}
 			header_up X-Forwarded-For {remote}
