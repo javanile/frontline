@@ -1,7 +1,7 @@
 
 volafacile.javanile.org {
 	reverse_proxy http://192.168.144.23:9999 {
-		header_up Host volafacile.javanile.org
+		header_up Host 192.168.144.23
 		header_up X-Real-IP {remote}
 		header_up X-Forwarded-For {remote}
 		header_up X-Forwarded-Port {server_port}
