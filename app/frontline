@@ -1,4 +1,4 @@
 
 frontline.javanile.org {
-    response "<h1>Hello World!</h1>"
+    respond "<h1>Hello World!</h1>"
 }
