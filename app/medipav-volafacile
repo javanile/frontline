@@ -1,6 +1,6 @@
 
 volafacile.javanile.org {
-	handle /code* {
+	handle_path /code/* {
 		reverse_proxy http://192.168.144.23:9980 {
 			header_up Host volafacile.javanile.org
 			header_up X-Real-IP {remote}
