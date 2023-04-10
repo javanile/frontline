@@ -4,7 +4,7 @@ set -e
 #echo "$1" | sudo -S rm -fr /opt/mysql.javanile.org
 
 if [ ! -d /opt/frontline ]; then
-  echo "$1" | sudo -S apt-get install make
+  echo "$1" | sudo -S apt-get install -y make
   echo "$1" | sudo -S make clone
   echo "$1" | sudo -S make expose-docker
 fi
